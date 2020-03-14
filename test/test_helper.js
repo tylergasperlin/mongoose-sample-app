@@ -6,3 +6,10 @@ mongoose.connection
     .on('error', (error) =>{
         console.warn('Warning', error);
     });
+
+beforeEach(()  => {
+    //delete all users in users collection
+    mongoose.connection.collections.users.drop(()=>{
+        //done()
+    });
+})
